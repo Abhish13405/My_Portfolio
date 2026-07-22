@@ -1,1086 +1,485 @@
 <!DOCTYPE html>
-<html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Eliott — Freelance UI/UX Designer and Frontend Developer. Fast, clean and accessible digital products.">
-  <meta name="keywords" content="freelance developer, UI designer, portfolio, Tailwind CSS, Alpine.js">
-  <meta name="author" content="Eliott">
-  <meta property="og:title" content="Eliott — Freelance UI/UX Designer">
-  <meta property="og:description" content="I design and build digital products that people love to use.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eliott.dev">
-  <!-- <title>Abhishek Kushwaha &amp; Data Science</title>
-    -->
-  <title>Abhishek Kushwaha | Data Science & Machine Learning</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-    rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { display: ['PT Sans', 'sans-serif'], body: ['DM Sans', 'sans-serif'] },
-          colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      font-family: 'DM Sans', sans-serif
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'PT Sans', sans-serif
-    }
-
-    body {
-      transition: background-color .3s, color .3s
-    }
-
-    /* noise overlay */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: .35;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")
-    }
-
-    /* scrollbar */
-    ::-webkit-scrollbar {
-      width: 5px
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #FF6B2B;
-      border-radius: 99px
-    }
-
-    /* reveal on scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity .6s cubic-bezier(.4, 0, .2, 1), transform .6s cubic-bezier(.4, 0, .2, 1)
-    }
-
-    .reveal.in {
-      opacity: 1;
-      transform: none
-    }
-
-    .d1 {
-      transition-delay: .08s
-    }
-
-    .d2 {
-      transition-delay: .16s
-    }
-
-    .d3 {
-      transition-delay: .24s
-    }
-
-    .d4 {
-      transition-delay: .32s
-    }
-
-    /* nav underline animation */
-    .nl {
-      position: relative
-    }
-
-    .nl::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1.5px;
-      background: currentColor;
-      transition: width .22s cubic-bezier(.4, 0, .2, 1)
-    }
-
-    .nl:hover::after,
-    .nl.on::after {
-      width: 100%
-    }
-
-    .nl.on {
-      font-weight: 500
-    }
-
-    /* shimmer button */
-    .shimmer {
-      position: relative;
-      overflow: hidden
-    }
-
-    .shimmer::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 60%;
-      height: 100%;
-      background: rgba(255, 255, 255, .18);
-      transform: skewX(-20deg);
-      transition: left .4s cubic-bezier(.4, 0, .2, 1)
-    }
-
-    .shimmer:hover::after {
-      left: 160%
-    }
-
-    /* photo frames */
-    .pf {
-      overflow: hidden;
-      background: #d4d4d8
-    }
-
-    .pf img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block
-    }
-
-    /* card hover */
-    .card-h {
-      transition: transform .28s cubic-bezier(.4, 0, .2, 1), border-color .18s
-    }
-
-    .card-h:hover {
-      transform: translateY(-4px)
-    }
-
-    /* skill tag */
-    .stag {
-      transition: border-color .18s
-    }
-
-    [x-cloak] {
-      display: none !important
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Portfolio</title>
+    <meta name="description" content="Portfolio of John Doe, Web Developer and Designer.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
 
-<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
-
-  <!-- ═══ NAV ═══ -->
-  <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
-    :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
-    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-
-      <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
-        <span class="text-zinc-900 dark:text-white">eli</span><span class="text-accent">ott</span>
-      </a>
-
-      <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
-        <li><a href="#services"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">Services</a></li>
-        <li><a href="#work"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
-        <li><a href="#about"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
-        <li><a href="#reviews"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Reviews</a></li>
-        <li><a href="#blog"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Blog</a></li>
-        <li><a href="#contact"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
-      </ul>
-
-      <div class="flex items-center gap-3">
-        <!-- dark toggle -->
-        <button @click="dark=!dark"
-          class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
-          :aria-label="dark?'Light mode':'Dark mode'">
-          <svg x-show="!dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-          <svg x-show="dark" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
-          </svg>
-        </button>
-        <!-- hire me -->
-        <a href="#contact"
-          class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          Hire me <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-        <!-- hamburger -->
-        <button @click="mm=!mm"
-          class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800"
-          :aria-expanded="mm" aria-label="Toggle menu">
-          <svg x-show="!mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg x-show="mm" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo">AK<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
-
-    <!-- mobile menu -->
-    <div x-show="mm" x-cloak x-transition:enter="transition ease-out duration-200"
-      x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
-      x-transition:leave-end="opacity-0 -translate-y-2"
-      class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
-      <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
-        <li><a href="#services" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Services</a></li>
-        <li><a href="#work" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
-        <li><a href="#about" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
-        <li><a href="#reviews" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Reviews</a></li>
-        <li><a href="#blog" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Blog</a></li>
-        <li><a href="#contact" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
-        <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
-          <a href="#contact" @click="mm=false"
-            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hire me →</a>
-        </li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ═══ HERO ═══ -->
-    <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"></div>
-      <div
-        class="absolute bottom-1/4 left-0 w-64 h-64 bg-zinc-200/50 dark:bg-zinc-800/30 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"></div>
-
-      <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-
-          <div>
-            <p class="reveal text-sm font-medium text-accent tracking-widest uppercase mb-4">Available for work</p>
-            <h1
-              class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
-              Hi, I'm <span class="text-accent">Abhishek</span>
-            </h1>
-            <p
-              class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
-              Data Scientist <strong class="font-medium text-zinc-700 dark:text-zinc-300">Data Analysis &amp; Machine
-                Learning
-                Developer</strong>.I build intelligent solutions using Python, Machine Learning, Data Analysis, and Data
-              Visualization.
-              Passionate about solving real-world problems through data-driven insights and AI technologies.
-            </p>
-            <div class="reveal d3 flex flex-wrap gap-4">
-              <a href="#work"
-                class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
-                View my work
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </a>
-              <a href="#contact"
-                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get
-                in touch</a>
-            </div>
-            <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
-              <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">34+</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Projects done</p>
-              </div>
-              <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">21+</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Happy clients</p>
-              </div>
-              <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">5y</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Experience</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="reveal d2 flex justify-center md:justify-end">
-            <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div class="pf w-full h-full rounded-3xl">
-                <img src="imeages/myphoto.jpeg"
-                  alt="Eliott — Freelance UI/UX Designer" loading="eager">
-              </div>
-              <div
-                class="absolute -bottom-4 -left-4 bg-accent text-white font-display font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg">
-                Open to projects</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ SERVICES ═══ -->
-    <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-14">
-          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">What I do</p>
-          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Services</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-
-          <article
-            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
-              </svg>
-            </div>
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">
-              Data Science
-            </h3>
-            
-            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              Transforming raw data into meaningful insights using machine learning, statistical analysis, and data visualization.
-              Building predictive models and data-driven solutions to solve real-world business problems.
-            </p>
-
-          <article
-            class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-            </div>
-            <h3 class="font-display font-bold text-xl text-white mb-3">
-              Data Scientist
-            </h3>
-            
-            <p class="text-sm text-zinc-400 leading-relaxed">
-              Building machine learning models and data-driven solutions using Python, Pandas, NumPy, and Scikit-learn.
-              Transforming raw data into actionable insights through analysis, visualization, and predictive modeling.
-            </p>
-          <article
-            class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div
-              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-              </svg>
-            </div>
-          <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">
-            Data Analysis
-          </h3>
-          
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-            Analyzing complex datasets to uncover meaningful patterns, trends, and insights. Using Python, SQL, Pandas, and
-            visualization tools to support data-driven decision making.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ WORK ═══ -->
-    <section id="work" class="py-24">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
-          <div>
-            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Selected
-              work</h2>
-          </div>
-          <a href="projects.html"
-            class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">All
-            projects →</a>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
-
-          <article
-            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
-            <div class="pf w-full h-64 md:h-80">
-              <img src="My_Portfolio\imeages\myphoto.jpeg" alt="Abhishek Kushwaha">
-              
-            </div>
-            <div class="p-7">
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">SaaS</span>
-                <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Figma</span>
-                <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Tailwind</span>
-              </div>
-              <a href="case-study.html">
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Novu — SaaS Dashboard
+    <header id="hero" class="section">
+        <div class="container hero-content">
+    
+            <div class="hero-text hidden">
+                <h2 class="greeting">👋 Hello, I'm</h2>
+    
+                <h1 class="title">Abhishek Kushwaha</h1>
+    
+                <h3 class="subtitle">
+                    Python Developer | Machine Learning Enthusiast | Aspiring Data Scientist
+                    <span class="typing-cursor">|</span>
                 </h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">
-                I am a passionate Data Science enthusiast with a strong interest in Machine Learning, Artificial Intelligence, and
-                Data Analytics.
-                I enjoy working with data to discover meaningful insights and build intelligent solutions that solve real-world
-                problems.
-                My technical skills include Python, SQL, Pandas, NumPy, Matplotlib, and Scikit-learn.<br><br>
-              
-                Throughout my learning journey, I have worked on projects involving data analysis, predictive modeling, and machine
-                learning.
-                These projects have helped me develop practical skills in data preprocessing, feature engineering, model training, and
-                evaluation.
-                I am always eager to learn new technologies and improve my problem-solving abilities.<br><br>
-              
-                As an aspiring Data Scientist, my goal is to leverage data-driven approaches to create impactful solutions.
-                I am continuously exploring advanced concepts in AI and Machine Learning while building projects that strengthen my
-                knowledge and experience in the field.
-              </p>
-              <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
-                study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg></a>
-            </div>
-          </article>
-
-          <article
-            class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="pf w-full h-48">
-              <img src="    <div class="grid md:grid-cols-2 gap-6">
-
-          <article
-            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
-            <div class="pf w-full h-64 md:h-80">
-              <img src="My_Portfolio\imeages\myphoto.jpeg" alt="Abhishek Kushwaha">
-              
-            </div>" alt="Finlo Fintech App"
-                loading="lazy">
-            </div>
-            <div class="p-6">
-              <div class="flex flex-wrap gap-2 mb-3">
-                <span
-                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Fintech</span>
-                <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Landing
-                  page</span>
-              </div>
-              <a href="case-study.html">
-                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Finlo — Fintech App</h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Marketing site and onboarding
-                flow for a personal finance app targeting young professionals. Tailwind CSS + Alpine.js.</p>
-              <a href="case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
-                study →</a>
-            </div>
-          </article>
-
-          <article
-            class="card-h reveal d3 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="pf w-full h-48">
-              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80"
-                alt="Orea Creative Agency" loading="lazy">
-            </div>
-            <div class="p-6">
-              <div class="flex flex-wrap gap-2 mb-3">
-                <span
-                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Agency</span>
-                <span
-                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Animation</span>
-              </div>
-              <a href="case-study.html">
-                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Orea — Creative Agency
-                </h3>
-              </a>
-              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Bold editorial site for a
-                Paris-based branding studio. Scroll-driven animations and custom cursor to match their premium
-                positioning.</p>
-              <a href=case-study.html"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case
-                study →</a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ABOUT ═══ -->
-    <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-
-          <div class="reveal order-2 md:order-1">
-            <div class="pf w-full aspect-square max-w-sm mx-auto rounded-3xl">
-              <img src="imeages\myphoto.jpeg" alt="Eliott"
-                loading="lazy">
-            </div>
-          </div>
-
-        <div class="order-1 md:order-2">
-          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
-            About Me
-          </p>
-        
-          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white leading-tight mb-6">
-            Turning Data Into<br>Meaningful Insights
-          </h2>
-        
-          <p class="reveal d2 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-            I'm Abhishek Kushwaha, an aspiring Data Scientist passionate about Machine Learning,
-            Artificial Intelligence, and Data Analytics. I enjoy transforming raw data into valuable
-            insights and building intelligent solutions that help solve real-world problems.
-          </p>
-        
-          <p class="reveal d3 text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8">
-            My expertise includes Python, SQL, Pandas, NumPy, Scikit-learn, and Data Visualization.
-            I continuously work on machine learning and data analysis projects to strengthen my skills
-            and stay updated with the latest advancements in AI and Data Science.
-          </p>
-      </div>
-      <div class="reveal d4">
-        <p class="text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-3">
-          Stack &amp; Tools
-        </p>
-      
-        <div class="flex flex-wrap gap-2" role="list" aria-label="Skills">
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Python</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">SQL</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Pandas</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">NumPy</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Matplotlib</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Scikit-learn</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Machine
-            Learning</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Power
-            BI</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Data
-            Visualization</span>
-      
-          <span role="listitem"
-            class="stag text-sm bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3.5 py-1.5 rounded-full hover:border-accent">Git
-            & GitHub</span>
-        </div>
-      </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ TESTIMONIALS ═══ -->
-    <section id="reviews" class="py-24">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-14">
-          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Social proof</p>
-          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">What clients
-            say</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-
-          <blockquote
-            class="reveal d1 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="flex gap-0.5 mb-5" aria-label="5 stars">
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-          </div>
-          
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">
-            "Data is the new oil, but insights are the real fuel. My goal is to transform raw data into meaningful solutions
-            through Machine Learning and Data Science."
-          </p>
-          
-          <footer class="flex items-center gap-3">
-            <div class="pf w-10 h-10 rounded-full shrink-0">
-              <img src="your-profile-image.jpg" alt="Abhishek Kushwaha" loading="lazy">
-            </div>
-          
-            <div>
-              <p class="font-medium text-sm text-zinc-900 dark:text-white">
-                Abhishek Kushwaha
-              </p>
-              <p class="text-xs text-zinc-500">
-                Aspiring Data Scientist
-              </p>
-            </div>
-          </footer>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote class="reveal d2 bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-7 border border-zinc-800">
-            <div class="flex gap-0.5 mb-5" aria-label="5 stars">
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-          <p class="text-zinc-400 text-sm leading-relaxed mb-6 italic">
-            "I am passionate about turning data into actionable insights through Machine Learning, Data Analysis, and Artificial
-            Intelligence. Every dataset tells a story, and I enjoy uncovering it."
-          </p>
-          
-          <footer class="flex items-center gap-3">
-            <div class="pf w-10 h-10 rounded-full shrink-0">
-              <img src="your-profile-image.jpg" alt="Abhishek Kushwaha" loading="lazy">
-            </div>
-          
-            <div>
-              <p class="font-medium text-sm text-white">
-                Abhishek Kushwaha
-              </p>
-              <p class="text-xs text-zinc-500">
-                Aspiring Data Scientist
-              </p>
-            </div>
-          </footer>
-              </div>
-            </footer>
-          </blockquote>
-
-          <blockquote
-            class="reveal d3 bg-zinc-50 dark:bg-zinc-900 rounded-2xl p-7 border border-zinc-100 dark:border-zinc-800">
-            <div class="flex gap-0.5 mb-5" aria-label="5 stars">
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <svg class="w-4 h-4 text-accent fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path
-                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-          <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 italic">
-            "Driven by curiosity and a passion for data, I enjoy transforming complex datasets into meaningful insights. My focus
-            is on Machine Learning, Data Analytics, and building intelligent solutions that create real-world impact."
-          </p>
-            <footer class="flex items-center gap-3">
-              <div class="pf w-10 h-10 rounded-full shrink-0"><img src="https://i.pravatar.cc/80?img=47"
-                  alt="Camille Dufresne" loading="lazy"></div>
-              <div>
-                <p class="font-medium text-sm text-zinc-900 dark:text-white">Camille Dufresne</p>
-                <p class="text-xs text-zinc-500">Creative Director, Orea</p>
-              </div>
-            </footer>
-          </blockquote>
-
-        </div>
-      </div>
-    </section>
-
-<!-- ═══ BLOG ═══ -->
-<section id="blog" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
-      <div>
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Insights</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">
-          Data Science Articles
-        </h2>
-      </div>
-      <a href="blog.html"
-        class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">
-        All Articles →
-      </a>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <!-- Article 1 -->
-      <article
-        class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-44">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Data Analysis"
-            loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span
-              class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
-              Data Analysis
-            </span>
-            <span class="text-xs text-zinc-400">Jun 2026</span>
-          </div>
-
-          <h3
-            class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
-            Understanding Data Preprocessing in Machine Learning
-          </h3>
-
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-            Learn why cleaning, transforming, and preparing data is one of the most important steps in any ML project.
-          </p>
-
-          <span class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white">
-            Read More →
-          </span>
-        </div>
-      </article>
-
-      <!-- Article 2 -->
-      <article
-        class="reveal d2 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-44">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&q=80" alt="Machine Learning"
-            loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span
-              class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
-              Machine Learning
-            </span>
-            <span class="text-xs text-zinc-400">May 2026</span>
-          </div>
-
-          <h3
-            class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
-            Logistic Regression Explained for Beginners
-          </h3>
-
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-            A beginner-friendly guide to one of the most widely used machine learning algorithms.
-          </p>
-
-          <span class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white">
-            Read More →
-          </span>
-        </div>
-      </article>
-
-      <!-- Article 3 -->
-      <article
-        class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-44">
-          <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=700&q=80" alt="AI and Data Science"
-            loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span
-              class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
-              AI
-            </span>
-            <span class="text-xs text-zinc-400">Apr 2026</span>
-          </div>
-
-          <h3
-            class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
-            How AI and Data Science Are Transforming Industries
-          </h3>
-
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
-            Exploring real-world applications of AI and Data Science in healthcare, finance, and business.
-          </p>
-
-          <span class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white">
-            Read More →
-          </span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-    <!-- ═══ CONTACT ═══ -->
-<section id="contact" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-10 md:p-16 relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl pointer-events-none"
-        aria-hidden="true"></div>
-      <div class="absolute bottom-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-2xl pointer-events-none"
-        aria-hidden="true"></div>
-
-      <div class="relative z-10 grid md:grid-cols-2 gap-12 items-start">
-
-        <div>
-          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
-            Contact Me
-          </p>
-
-          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-white leading-tight mb-5">
-            Let's Build<br>Data-Driven Solutions
-          </h2>
-
-          <p class="reveal d2 text-zinc-400 leading-relaxed mb-8">
-            Interested in Data Science, Machine Learning, AI, or Analytics projects?
-            I'm always open to collaborating, learning, and working on innovative
-            solutions that create real-world impact.
-          </p>
-
-          <div class="reveal d3 flex flex-col gap-4">
-
-            <a href="mailto:your-email@gmail.com"
-              class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
-              <span
-                class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
-                📧
-              </span>
-              <span class="text-sm">your-email@gmail.com</span>
-            </a>
-
-            <a href="https://github.com/yourusername"
-              class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
-              <span
-                class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
-                💻
-              </span>
-              <span class="text-sm">GitHub Profile</span>
-            </a>
-
-            <a href="https://linkedin.com/in/yourusername"
-              class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
-              <span
-                class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
-                🔗
-              </span>
-              <span class="text-sm">LinkedIn Profile</span>
-            </a>
-
-          </div>
-        </div>
-                </a>
-                <a href="https://linkedin.com/in/eliott-dev" rel="noopener noreferrer" target="_blank"
-                  class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
-                  <span
-                    class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                  </span>
-                  <span class="text-sm">https://www.linkedin.com/in/abhishek-kushwaha-36174629b/</span>
-                </a>
-                <a href="https://github.com/eliott-dev" rel="noopener noreferrer" target="_blank"
-                  class="group flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
-                  <span
-                    class="w-9 h-9 flex items-center justify-center bg-zinc-800 rounded-lg group-hover:bg-accent/20 transition-colors shrink-0">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  </span>
-                  <span class="text-sm">https://github.com/Abhish13405</span>
-                </a>
-              </div>
-            </div>
-
-            <div class="reveal d2">
-              <form action="#" method="POST" novalidate>
-                <div class="flex flex-col gap-4">
-                  <div class="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label for="fname" class="block text-xs font-medium text-zinc-400 mb-1.5">Name <span
-                          aria-hidden="true">*</span></label>
-                      <input type="text" id="fname" name="name" placeholder="Jane Smith" required autocomplete="name"
-                        class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                    <div>
-                      <label for="femail" class="block text-xs font-medium text-zinc-400 mb-1.5">Email <span
-                          aria-hidden="true">*</span></label>
-                      <input type="email" id="femail" name="email" placeholder="jane@company.com" required
-                        autocomplete="email"
-                        class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                  </div>
-                  <div>
-                    <label for="fsubject" class="block text-xs font-medium text-zinc-400 mb-1.5">Subject</label>
-                    <input type="text" id="fsubject" name="subject" placeholder="Project inquiry"
-                      class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors">
-                  </div>
-                  <div>
-                    <label for="fmessage" class="block text-xs font-medium text-zinc-400 mb-1.5">Message <span
-                        aria-hidden="true">*</span></label>
-                    <textarea id="fmessage" name="message" rows="4" placeholder="Tell me about your project..." required
-                      class="w-full bg-zinc-800 border border-zinc-700 text-white text-sm rounded-xl px-4 py-3 placeholder-zinc-600 focus:outline-none focus:border-accent transition-colors resize-none"></textarea>
-                  </div>
-                  <button type="submit"
-                    class="shimmer w-full bg-accent text-white font-display font-bold text-sm py-3.5 rounded-xl hover:bg-accent-light transition-colors">
-                    Send message →
-                  </button>
+    
+                <p class="description">
+                    Passionate about building intelligent applications using Python, Machine Learning,
+                    Data Science, and AI. I enjoy solving real-world problems with data,
+                    developing predictive models, and creating modern web applications with Flask & Django.
+                </p>
+    
+                <div class="hero-cta">
+                    <a href="#projects" class="btn primary-btn">
+                        <i class="fas fa-code"></i> View Projects
+                    </a>
+    
+                    <a href="#contact" class="btn secondary-btn">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+    
+                    <a href="resume.pdf" class="btn resume-btn" download>
+                        <i class="fas fa-download"></i> Resume
+                    </a>
                 </div>
-              </form>
+    
+                <div class="social-links">
+                    <a href="https://github.com/Abhish13405" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+    
+                    <a href="https://www.linkedin.com/in/abhishek-kushwaha-36174629b/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+    
+                    <a href="mailto:abhishekkushwaha13405@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+    
+                    <a href="https://www.kaggle.com/abhishekkushwaha1" target="_blank">
+                        <i class="fab fa-kaggle"></i>
+                    </a>
+                </div>
             </div>
-
-          </div>
+    
+            <div class="hero-image-wrapper hidden delay-1">
+    
+                <div class="hero-image">
+                    <img src="images/myphoto.jpeg" alt="Abhishek Kushwaha">
+                </div>
+    
+                <div class="floating-badge badge-1">
+                    <i class="fab fa-python"></i>
+                </div>
+    
+                <div class="floating-badge badge-2">
+                    <i class="fas fa-brain"></i>
+                </div>
+    
+                <div class="floating-badge badge-3">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+    
+                <div class="floating-badge badge-4">
+                    <i class="fas fa-database"></i>
+                </div>
+    
+            </div>
+    
         </div>
-      </div>
+    
+        <div class="scroll-down">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- <header id="hero" class="section">
+        <div class="container hero-content">
+            <div class="hero-text hidden">
+                <h2 class="greeting">Hello, I'm</h2>
+                <h1 class="title">Abhishek kushwahha</h1>
+                <h3 class="subtitle">Data Scientist & Ml enthusiast<span class="typing-cursor">|</span></h3>
+                <p class="description">I build exceptional and accessible digital experiences for the web. Turning complex problems into beautiful, intuitive designs.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper hidden delay-1">
+                <div class="hero-image">
+                    <!-- Placeholder using a generated gradient since we don't have an image -->
+                    <!-- <div class="image-placeholder"></div>
+                </div>
+                <div class="floating-badge badge-1"><i class="fab fa-html5"></i></div>
+                <div class="floating-badge badge-2"><i class="fab fa-css3-alt"></i></div>
+                <div class="floating-badge badge-3"><i class="fab fa-js"></i></div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </header> --> -->
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title hidden">About Me<span class="dot">.</span></h2>
+            <div class="about-content hidden delay-1">
+            <div class="about-text">
+                <p>
+                    I'm <strong>Abhishek Kushwaha</strong>, an aspiring Data Scientist and Machine Learning Engineer currently
+                    pursuing a B.Tech in Cloud Computing & Machine Learning. I love transforming raw data into meaningful insights
+                    and developing AI-powered solutions using Python.
+                </p>
+            
+                <p>
+                    My technical skills include Python, Machine Learning, Data Analysis, Flask, SQL, Git, NumPy, Pandas,
+                    Matplotlib, and Scikit-learn. I enjoy building ML models, data-driven web applications, and solving real-world
+                    challenges through technology.
+                </p>
+            
+                <p>
+                    I'm always eager to learn new technologies, contribute to impactful projects, and grow as an AI professional. My
+                    long-term goal is to build intelligent systems that make people's lives easier and create value through
+                    innovation.
+                </p>
+            </div>
+                <div class="about-stats">
+                
+                    <div class="stat-card">
+                        <h3>10+</h3>
+                        <p>Python & ML Projects</p>
+                    </div>
+                
+                    <div class="stat-card">
+                        <h3>8+</h3>
+                        <p>Technologies Learned</p>
+                    </div>
+                
+                    <div class="stat-card">
+                        <h3>4th</h3>
+                        <p>Year B.Tech Student</p>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
     </section>
 
-  </main>
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title hidden">My Skills<span class="dot">.</span></h2>
+            <p class="section-subtitle hidden">Technologies I've been working with recently</p>
+            
+            <div class="skills-grid">
+            
+                <div class="skill-card hidden">
+                    <i class="fab fa-python skill-icon"></i>
+                    <h3>Python</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden delay-1">
+                    <i class="fas fa-table skill-icon"></i>
+                    <h3>Pandas</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden delay-2">
+                    <i class="fas fa-calculator skill-icon"></i>
+                    <h3>NumPy</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden">
+                    <i class="fas fa-chart-line skill-icon"></i>
+                    <h3>Matplotlib</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden delay-1">
+                    <i class="fas fa-brain skill-icon"></i>
+                    <h3>Scikit-Learn</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden delay-2">
+                    <i class="fas fa-robot skill-icon"></i>
+                    <h3>Machine Learning</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3>SQL</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden delay-1">
+                    <i class="fas fa-chart-bar skill-icon"></i>
+                    <h3>Data Visualization</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            
+                <div class="skill-card hidden delay-2">
+                    <i class="fas fa-flask skill-icon"></i>
+                    <h3>Flask</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </section>
 
-<footer class="border-t border-zinc-100 dark:border-zinc-900">
-  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title hidden">Featured Projects<span class="dot">.</span></h2>
+            
+            <div class="projects-grid">
+                <div class="project-card hidden">
+                    <div class="project-image project-img-1"></div>
+                    <div class="project-info">
+                    
+                        <div class="project-links">
+                            <a href="https://github.com/Abhish13405/E_commerce_data" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                    
+                            <a href="https://ecommerce-webpage.streamlit.app/" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    
+                        <h3>Sentiment Analysis Dashboard</h3>
+                    
+                        <p>
+                            Developed an interactive Sentiment Analysis Dashboard using Streamlit that classifies text into Positive,
+                            Negative, and Neutral sentiments. The application provides real-time predictions, visualizes sentiment
+                            distribution with charts, and offers an intuitive interface for analyzing user reviews and feedback.
+                        </p>
+                    
+                        <ul class="project-tech">
+                            <li>Python</li>
+                            <li>Streamlit</li>
+                            <li>Pandas</li>
+                            <li>Numpy</li>
+                            <li>Scikit-learn</li>
+                            <li>Matplotlib</li>
+                        </ul>
+                    
+                    </div>
+                </div>
 
-    <p class="text-sm text-zinc-400">
-      © <span id="yr"></span> Abhishek Kushwaha. All rights reserved.
-    </p>
+                <div class="project-card hidden delay-1">
+                    <div class="project-image project-img-2"></div>
+                    <div class="project-info">
+                        <div class="project-links">
+                            <a href="https://github.com/Abhish13405/diebites_detection_app" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    
+                        <h3>Diabetes Prediction System</h3>
+                    
+                        <p>
+                            Developed a Machine Learning-based Diabetes Prediction System using Python and Flask. The application predicts
+                            the likelihood of diabetes based on user health parameters and provides instant results through a user-friendly
+                            web interface.
+                        </p>
+                    
+                        <ul class="project-tech">
+                            <li>Python</li>
+                            <li>Flask</li>
+                            <li>Scikit-learn</li>
+                            <li>Pandas</li>
+                            <li>NumPy</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <div class="flex items-center gap-4 text-xs text-zinc-500">
-      <a href="https://github.com/yourusername" target="_blank" class="hover:text-accent transition-colors">
-        GitHub
-      </a>
+                <div class="project-card hidden delay-2">
+                    <div class="project-image project-img-3"></div>
+                    <div class="project-info">
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3>AI Image Generator</h3>
+                        <p>A sleek web interface that connects to OpenAI's DALL-E API to generate custom images based on user prompts.</p>
+                        <ul class="project-tech">
+                            <li>React</li>
+                            <li>Tailwind</li>
+                            <li>OpenAI API</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-accent transition-colors">
-        LinkedIn
-      </a>
+    <section id="contact" class="section">
+        <div class="container">
+    
+            <h2 class="section-title hidden">
+                Contact Me<span class="dot">.</span>
+            </h2>
+    
+            <p class="section-subtitle hidden">
+                Interested in collaborating, internships, or Machine Learning projects? Feel free to reach out.
+            </p>
+    
+            <div class="contact-content hidden delay-1">
+    
+                <div class="contact-info">
+    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>abhishekkushwaha13405@gmail.com</p>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>https://www.linkedin.com/in/abhishek-kushwaha-36174629b/</p>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p>https://github.com/Abhish13405</p>
+                        </div>
+                    </div>
+    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Lucknow, Uttar Pradesh, India</p>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <form class="contact-form" id="contactForm">
+    
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder="Your Name">
+                    </div>
+    
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder="Your Email">
+                    </div>
+    
+                    <div class="form-group">
+                        <input type="text" id="subject" required placeholder="Subject">
+                    </div>
+    
+                    <div class="form-group">
+                        <textarea id="message" rows="5" required placeholder="Write your message here..."></textarea>
+                    </div>
+    
+                    <button type="submit" class="btn primary-btn submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+    
+                </form>
+    
+            </div>
+    
+        </div>
+    </section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                Abhish<span class="dot">.</span>
+            </div>
+
+            <div class="footer-social">
+
+                <a href="https://github.com/Abhish13405" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/abhishek-kushwaha-36174629b/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="abhishekkushwaha13405@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://www.kaggle.com/abhishekkushwaha1" target="_blank" title="Kaggle">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 Abhishek Kushwaha. All Rights Reserved.
+            </p>
+
+            <p class="footer-text">
+                Built with  using HTML, CSS & JavaScript.
+            </p>
+
+        </div>
     </div>
-
-  </div>
 </footer>
 
-  <script>
-    function app() {
-      return {
-        dark: false,
-        mm: false,
-        sc: false,
-        s: 'hero',
-
-        init() {
-          // dark mode
-          this.dark = localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-          this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
-
-          // scroll
-          window.addEventListener('scroll', () => {
-            this.sc = window.scrollY > 20;
-            this.updateSection();
-          }, { passive: true });
-
-          // reveal
-          const io = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-          document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-          // year
-          document.getElementById('yr').textContent = new Date().getFullYear();
-        },
-
-        updateSection() {
-          const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
-          if (atBottom) { this.s = 'contact'; return; }
-          const ids = ['contact', 'blog', 'reviews', 'about', 'work', 'services', 'hero'];
-          for (const id of ids) {
-            const el = document.getElementById(id);
-            if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
-          }
-        }
-      }
-    }
-  </script>
-
+    <script src="script.js"></script>
 </body>
-
 </html>
