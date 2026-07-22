@@ -1005,3 +1005,81 @@ textarea:focus-visible {
     }
 
 }
+/* ==========================================================================
+   Global Responsive Adjustments (Mobile & Tablet)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navigation - Show Hamburger, hide links */
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; 
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    /* When active class is added via JS */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Typography Adjustments */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-image {
+        width: 240px;
+        height: 240px;
+    }
+}
