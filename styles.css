@@ -1,32 +1,40 @@
 :root {
-    /* Color Palette - Dark Theme with Reddish/Warm Accents */
-    --bg-color: #1c0a0c;
-    /* Deep dark reddish/burgundy background */
-    --bg-light: #2d1216;
-    /* Slightly lighter reddish dark background */
-    --text-main: #fef2f2;
-    /* White text with a very slight red tint */
-    --text-muted: #fca5a5;
-    /* Soft muted pinkish-red text */
+    /* ===== Dark Blue Professional Theme ===== */
 
-    --accent: #ef4444;
-    /* Vibrant Red accent */
-    --accent-hover: #dc2626;
-    /* Darker red on hover */
-    --secondary-accent: #f43f5e;
-    /* Rose/Pinkish Red */
+    /* Background */
+    --bg-color: #0b1120;
+    /* Main Background */
+    --bg-light: #172554;
+    /* Cards / Sections */
+
+    /* Text */
+    --text-main: #f8fafc;
+    /* White */
+    --text-muted: #cbd5e1;
+    /* Light Gray */
+
+    /* Accent Colors */
+    --accent: #3b82f6;
+    /* Blue */
+    --accent-hover: #2563eb;
+    /* Dark Blue */
+    --secondary-accent: #60a5fa;
+    /* Sky Blue */
 
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    /* Transitions & Shadows */
+    /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-glow: 0 0 20px rgba(239, 68, 68, 0.3);
-    /* Red glow effect */
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 20px 30px rgba(0, 0, 0, 0.35);
+
+    /* Blue Glow */
+    --shadow-glow: 0 0 25px rgba(59, 130, 246, 0.35);
 
     /* Layout */
     --nav-height: 80px;
@@ -1088,4 +1096,20 @@ textarea:focus-visible {
         width: 240px;
         height: 240px;
     }
+}
+.btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(59, 130, 246, .35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(59, 130, 246, .5);
+}
+
+.card {
+    background: rgba(23, 37, 84, .55);
+    border: 1px solid rgba(96, 165, 250, .2);
+    backdrop-filter: blur(12px);
 }
